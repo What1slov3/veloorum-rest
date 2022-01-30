@@ -16,7 +16,7 @@ ES6/Typescript/Node.js/Nest.js(Express.js)/MongoDB/Socket.io/Passport.js
   username:~$ npm install | npm run start:dev/npm run start
 ```
 
-_**Создать .env**_
+**Создать .env**
 
 ```
   DEV= true | false - текущая среда разработки
