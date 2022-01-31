@@ -24,7 +24,7 @@ export class InvitesService {
     await this.inviteModel.findOneAndDelete({ cid });
     const invite = await this.inviteModel.create({
       url: `${
-        isDev() ? process.env.DEV_URL : process.env.URL
+        isDev() ? process.env.STATIC_URL : process.env.URL
       }/invite/${generateRandomString(10)}`,
       cid,
     });

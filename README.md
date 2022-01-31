@@ -19,14 +19,15 @@ ES6/Typescript/Node.js/Nest.js(Express.js)/MongoDB/Socket.io/Passport.js
 **Создать .env**
 
 ```
-  DEV= true | false - текущая среда разработки
+  ENV - текущая среда разработки: dev | prod
   PORT - порт сервера
   URL - URL сервера в prod
   DEV_URL - URL сервера в dev
-  DB_URI=mongodb://domain:port/:db_name:
-  UPLOAD_LOCATION - относительный путь до папки сохраняемых файлов (рекомендуется ./upload)
+  DB_URI - путь к MongoDB
+  UPLOAD_LOCATION - относительный путь до папки сохраняемых файлов
   MAX_FILE_SIZE - максимальный размер файла в Мб
   JWT_SECRET - любая строка, для генерации JWT
+  STATIC_URL - адрес сервера раздачи статики и обратного прокси сервера, например nginx, в dev сборке
 ```
 
 ---

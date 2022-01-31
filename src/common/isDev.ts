@@ -1,1 +1,1 @@
-export const isDev = () => (process.env.DEV ? true : false);
+export const isDev = () => (process.env.ENV.toLowerCase() === 'dev' ? true : false);

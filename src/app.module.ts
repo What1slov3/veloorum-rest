@@ -18,7 +18,7 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.DB_URI, { appName: 'Astro' }),
+    MongooseModule.forRoot(process.env.DB_URI),
     MulterModule.register({
       dest: './',
     }),

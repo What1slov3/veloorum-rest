@@ -17,7 +17,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 
-@Controller('messages')
+@Controller('api/messages')
 export class MessagesController {
   constructor(private readonly MessagesService: MessagesService) {}
 

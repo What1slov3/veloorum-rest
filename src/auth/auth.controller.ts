@@ -4,7 +4,7 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { AuthService } from './auth.service';
 import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 
-@Controller('auth')
+@Controller('api/auth')
 export class AuthController {
   constructor(private readonly AuthService: AuthService) {}
 

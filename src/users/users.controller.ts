@@ -21,7 +21,8 @@ import CreateUserDTO from './dto/create-user.dto';
 import GetLoadedUsersDTO from './dto/get-loaded-users.dto';
 import ChangeUserDataDTO from './dto/change-user-data.dto';
 import ChangePasswordDTO from './dto/change-password.dto';
-@Controller('users')
+
+@Controller('api/users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 

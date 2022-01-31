@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
-@Controller('invites')
+@Controller('api/invites')
 export class InvitesController {
   constructor(private readonly invitesService: InvitesService) {}
 
@@ -23,7 +23,7 @@ export class InvitesController {
 
   @Get('/channel/:id')
   getChannelInfoForInvite(@Request() req) {
-    const url = `${isDev() ? process.env.DEV_URL : process.env.URL}/invites/${
+    const url = `${isDev() ? process.env.STATIC_URL : process.env.URL}/invite/${
       req.path.match(/([^\/]+$)/)[0]
     }`;
     return this.invitesService.getChannelInfoForInvite(

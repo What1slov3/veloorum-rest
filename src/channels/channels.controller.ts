@@ -18,7 +18,7 @@ import {
 } from '@nestjs/common';
 import { multerOptions } from 'src/common/configs/storage.config';
 
-@Controller('channels')
+@Controller('api/channels')
 export class ChannelsController {
   constructor(private readonly ChannelsService: ChannelsService) {}
 

@@ -11,12 +11,11 @@ import {
   Param,
   Patch,
   Post,
-  Put,
   Query,
   UseGuards,
 } from '@nestjs/common';
 
-@Controller('chats')
+@Controller('api/chats')
 export class ChatsController {
   constructor(private readonly ChatsService: ChatsService) {}
 
