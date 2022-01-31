@@ -4,6 +4,8 @@
 
 Исходный код приложения [Veloorum](https://github.com/What1slov3/veloorum 'Veloorum')
 
+Данная информация предназначена для ознакомления, но не использования сторонними людьми  
+
 ---
 
 ## Стек
@@ -28,6 +30,7 @@ ES6/Typescript/Node.js/Nest.js(Express.js)/MongoDB/Socket.io/Passport.js
   MAX_FILE_SIZE - максимальный размер файла в Мб
   JWT_SECRET - любая строка, для генерации JWT
   STATIC_URL - адрес сервера раздачи статики и обратного прокси сервера, например nginx, в dev сборке
+  APP_NAME - название приложение (Veloorum)
 ```
 
 ---
