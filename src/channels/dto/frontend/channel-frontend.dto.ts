@@ -6,6 +6,7 @@ export class ChannelFrontendDTO {
   type: string;
   uuid: string;
   members: string[];
+  description: string;
 
   constructor(data: any) {
     this.ownerId = data.ownerId;
@@ -15,5 +16,6 @@ export class ChannelFrontendDTO {
     this.type = data.type;
     this.uuid = data._id || data.uuid;
     this.members = data.members;
+    this.description = data.description;
   }
 }

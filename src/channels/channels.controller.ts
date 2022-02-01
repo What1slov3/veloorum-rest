@@ -46,8 +46,8 @@ export class ChannelsController {
 
   @UseGuards(JwtAuthGuard)
   @Put('/update_channel')
-  updateAvatarChannel(@Body() body: UpdateChannelDTO) {
-    return this.ChannelsService.updateChat(body);
+  updateChannel(@Body() body: UpdateChannelDTO) {
+    return this.ChannelsService.updateChannel(body);
   }
 
   @UseGuards(JwtAuthGuard)
@@ -58,8 +58,8 @@ export class ChannelsController {
       multerOptions,
     ),
   )
-  uploadAvatar(@Body() body, @UploadedFiles() files) {
-    return this.ChannelsService.updateChatIcon(
+  updateChannelIcon(@Body() body, @UploadedFiles() files) {
+    return this.ChannelsService.updateChannelIcon(
       body.cid,
       getUploadedFileUrl(files.icon[0]),
     );

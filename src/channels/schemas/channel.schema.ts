@@ -30,20 +30,23 @@ export class Channel {
   @Prop({ required: true })
   members: [String];
 
-  @Prop({required: true})
+  @Prop({ required: true })
   allTimeMembers: [String];
 
   @Prop({ default: '' })
   iconUrl: String;
 
   @Prop(raw({}))
-  serverConfig: Record<string, any>;
+  channelConfig: Record<string, any>;
 
   @Prop({ default: [] })
   chats: [String];
 
   @Prop({ required: true })
   ownerId: String;
+
+  @Prop({ default: '' })
+  description: String;
 }
 
 export const ChannelSchema = SchemaFactory.createForClass(Channel);

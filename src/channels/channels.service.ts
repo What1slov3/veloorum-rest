@@ -140,7 +140,7 @@ export class ChannelsService {
     return channel;
   }
 
-  async updateChat(channelUpdate: UpdateChannelDTO) {
+  async updateChannel(channelUpdate: UpdateChannelDTO) {
     const { cid, ...data } = channelUpdate;
 
     const channel = await this.channelModel.findByIdAndUpdate(cid, data, {
@@ -154,7 +154,7 @@ export class ChannelsService {
     return new ChannelFrontendDTO(channel);
   }
 
-  async updateChatIcon(cid: string, iconUrl: string) {
+  async updateChannelIcon(cid: string, iconUrl: string) {
     const channel = await this.channelModel.findByIdAndUpdate(
       cid,
       { iconUrl },
