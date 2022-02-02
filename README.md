@@ -2,7 +2,7 @@
 
 [![logoV1.png](https://i.postimg.cc/5y6nrqww/logoV1.png)](https://postimg.cc/1V1GnF7t)
 
-Исходный код приложения [Veloorum](https://github.com/What1slov3/veloorum 'Veloorum')
+Исходный код приложения и вся информация о нем -> [Veloorum](https://github.com/What1slov3/veloorum 'Veloorum')
 
 Данная информация предназначена для ознакомления, но не использования сторонними людьми  
 

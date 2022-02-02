@@ -47,7 +47,7 @@ export class ChannelsController {
   @UseGuards(JwtAuthGuard)
   @Put('/update_channel')
   updateChannel(@Body() body: UpdateChannelDTO) {
-    this.ChannelsService.updateChannel(body);
+    return this.ChannelsService.updateChannel(body);
   }
 
   @UseGuards(JwtAuthGuard)
