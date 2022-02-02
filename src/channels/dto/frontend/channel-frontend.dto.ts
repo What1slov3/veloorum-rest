@@ -7,6 +7,7 @@ export class ChannelFrontendDTO {
   uuid: string;
   members: string[];
   description: string;
+  systemChat: string;
 
   constructor(data: any) {
     this.ownerId = data.ownerId;
@@ -17,5 +18,6 @@ export class ChannelFrontendDTO {
     this.uuid = data._id || data.uuid;
     this.members = data.members;
     this.description = data.description;
+    this.systemChat = data.systemChat;
   }
 }

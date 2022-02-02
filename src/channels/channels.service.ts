@@ -1,3 +1,4 @@
+import { EventEmitter2 } from '@nestjs/event-emitter';
 import { UpdateChannelDTO } from './dto/update-channel.dto';
 import { ChatFrontendDTO } from './../chats/dto/frontend/chat-frontend.dto';
 import { randomUUID } from 'crypto';
@@ -49,6 +50,7 @@ export class ChannelsService {
       ownerId: channelData.uid,
       title: channelData.title,
       chats: [greetingsChat._id],
+      systemChat: greetingsChat._id,
     });
 
     const user = await this.UsersService.addChannelToUser(

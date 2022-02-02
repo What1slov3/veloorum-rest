@@ -29,7 +29,7 @@ export class Message {
     required: false,
     validate: {
       validator: (type: string) => {
-        return ['new_user'].includes(type);
+        return ['userJoin', 'userLeft'].includes(type);
       },
     },
   })

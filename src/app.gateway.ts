@@ -80,14 +80,13 @@ export class AppGateway {
     client.join(payload.cid);
   }
 
-  @OnEvent('push/new_user')
+  @OnEvent('push/systemMessage')
   handleJoinUser(payload: SystemMessageDTO) {
     this.server
       .to(payload.context.chatId)
       .emit('receive/chats/userMessage', payload);
-    this.server.to(payload.context.channelId).emit('receive/common/newUser', {
-      uid: payload.content.targetUser,
-      cid: payload.context.channelId,
-    });
+    this.server
+      .to(payload.context.channelId)
+      .emit(`receive/common/${payload.systemType}`, payload);
   }
 }

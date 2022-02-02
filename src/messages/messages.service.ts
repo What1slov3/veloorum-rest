@@ -137,7 +137,7 @@ export class MessagesService {
     return message;
   }
 
-  @OnEvent('systemMessage/new_user')
+  @OnEvent('systemMessage/send')
   async sendSystemMessage(systemMessage: SystemMessageDTO) {
     const { content, context, systemType } = systemMessage;
     const message = await this.messageModel.create({
@@ -154,7 +154,7 @@ export class MessagesService {
     await this.ChatsService.addMessage(context.chatId, message._id);
 
     this.eventEmitter.emit(
-      `push/${systemType}`,
+      `push/systemMessage`,
       new MessageFrontendDTO(message),
     );
 

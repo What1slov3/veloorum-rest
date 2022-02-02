@@ -1,3 +1,5 @@
+import { getRandomGreetings } from './../common/getRandomGreeetings';
+import { getRandomBye } from './../common/getRandomBye';
 import { AddMemberDTO } from './../chats/dto/add-member.dto';
 import { ChatsService } from './../chats/chats.service';
 import { LoadedUserDTO } from './dto/frontend/loadedUser.frontend.dto';
@@ -143,16 +145,16 @@ export class UsersService {
       new AddMemberDTO({ cid: channel.chats, uid: [uid] }),
     );
 
-    // PATH: app.gateway.ts/new_user, messages.service.ts/sendSystemMessage
+    // PATH: app.gateway.ts/userJoin, messages.service.ts/sendSystemMessage
     this.eventEmitter.emit(
-      'systemMessage/new_user',
+      'systemMessage/send',
       new SystemMessageDTO({
-        context: { chatId: channel.chats[0], channelId: channel._id },
+        context: { chatId: channel.systemChat, channelId: channel._id },
         content: {
-          text: `Присоединился новый пользователь`,
+          text: getRandomGreetings(),
           targetUser: uid,
         },
-        systemType: 'new_user',
+        systemType: 'userJoin',
         system: true,
       }),
     );
@@ -180,7 +182,21 @@ export class UsersService {
       { new: true },
     );
 
-    await this.channelsService.pullMember(cid, uid);
+    const channel = await this.channelsService.pullMember(cid, uid);
+
+    // PATH: messages.service.ts/sendSystemMessage
+    this.eventEmitter.emit(
+      'systemMessage/send',
+      new SystemMessageDTO({
+        context: { chatId: channel.systemChat, channelId: channel._id },
+        content: {
+          text: getRandomBye(),
+          targetUser: uid,
+        },
+        systemType: 'userLeft',
+        system: true,
+      }),
+    );
 
     return {
       user: new UserFrontendDTO(user),

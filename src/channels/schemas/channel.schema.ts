@@ -47,6 +47,9 @@ export class Channel {
 
   @Prop({ default: '' })
   description: String;
+
+  @Prop({ default: '' })
+  systemChat: String;
 }
 
 export const ChannelSchema = SchemaFactory.createForClass(Channel);
